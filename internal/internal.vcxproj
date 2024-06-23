@@ -1,0 +1,520 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{5faa7573-1e17-4abe-a2b9-840ed11a3678}</ProjectGuid>
+    <RootNamespace>Molly</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>internal</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(SolutionDir)src;C:\Program Files\Java\jdk-17\include;C:\Program Files\Java\jdk-17\include\win32;$(SolutionDir);$(SolutionDir)ext;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\Java\jdk-17\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(SolutionDir)internal;$(SolutionDir)internal\src;$(SolutionDir)\internal\ext;C:\Program Files\Java\jdk-22\include;C:\Program Files\Java\jdk-22\include\win32;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\Java\jdk-22\lib;C:\Program Files\VMProtect Professional\Lib\Windows;$(LibraryPath)</LibraryPath>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutDir>..\out\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <VcpkgUseStatic>true</VcpkgUseStatic>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level1</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>jvm.lib;Ws2_32.lib;opengl32.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>cpr.lib;WinMM.lib;crypt32.lib;jvm.lib;Ws2_32.lib;opengl32.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ext\imgui\custom\widgets\checkbox.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\imgui\custom\widgets\child.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\imgui\custom\widgets\colorpicker.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\imgui\custom\widgets\misc.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\imgui\custom\widgets\navbar.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\imgui\custom\widgets\selectable.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\imgui\custom\widgets\slider.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\imgui\custom\widgets\textbutton.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\imgui\custom\widgets\tooltips.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\imgui\imgui.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\imgui\imgui_demo.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\imgui\imgui_draw.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\imgui\imgui_impl_opengl2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\imgui\imgui_impl_opengl3.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\imgui\imgui_impl_win32.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\imgui\imgui_tables.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\imgui\imgui_widgets.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\minhook\buffer.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\minhook\hde\hde32.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\minhook\hde\hde64.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\minhook\hook.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ext\minhook\trampoline.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\cheat\drawing\glowrenderer.cpp" />
+    <ClCompile Include="src\cheat\gui\notifications\notifications.cpp" />
+    <ClCompile Include="src\cheat\gui\spotify\spotify.cpp" />
+    <ClCompile Include="src\cheat\gui\ui.cpp" />
+    <ClCompile Include="src\cheat\hook\detours\java\addtosendqueue.cpp" />
+    <ClCompile Include="src\cheat\hook\detours\java\attackentity.cpp" />
+    <ClCompile Include="src\cheat\hook\detours\java\attacktargetentitywithcurrentitem.cpp" />
+    <ClCompile Include="src\cheat\hook\detours\java\channelread0.cpp" />
+    <ClCompile Include="src\cheat\hook\detours\java\clickblock.cpp" />
+    <ClCompile Include="src\cheat\hook\detours\java\clickmouse.cpp" />
+    <ClCompile Include="src\cheat\hook\detours\java\getmouseover.cpp" />
+    <ClCompile Include="src\cheat\hook\detours\java\handleentityvelocity.cpp" />
+    <ClCompile Include="src\cheat\hook\detours\java\handlestatusupdate.cpp" />
+    <ClCompile Include="src\cheat\hook\detours\java\loadworld.cpp" />
+    <ClCompile Include="src\cheat\hook\detours\java\renderworldpass.cpp" />
+    <ClCompile Include="src\cheat\hook\detours\java\runtick.cpp" />
+    <ClCompile Include="src\cheat\hook\detours\java\swingitem.cpp" />
+    <ClCompile Include="src\cheat\hook\detours\java\updatecameraandrender.cpp" />
+    <ClCompile Include="src\cheat\hook\detours\onwindowsdisplayupdate.cpp" />
+    <ClCompile Include="src\cheat\hook\detours\strictmathatan2.cpp" />
+    <ClCompile Include="src\cheat\hook\detours\onswapbuffers.cpp" />
+    <ClCompile Include="src\cheat\hook\detours\wglswapbuffers.cpp" />
+    <ClCompile Include="src\cheat\module\client\altmanager.cpp" />
+    <ClCompile Include="src\cheat\module\module.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\cheat\module\modules\combat\aimassist.cpp" />
+    <ClCompile Include="src\cheat\module\modules\combat\autoclicker.cpp" />
+    <ClCompile Include="src\cheat\module\modules\combat\blockhit.cpp" />
+    <ClCompile Include="src\cheat\module\modules\combat\example.cpp" />
+    <ClCompile Include="src\cheat\module\modules\combat\hitselect.cpp" />
+    <ClCompile Include="src\cheat\module\modules\combat\reach.cpp" />
+    <ClCompile Include="src\cheat\module\modules\combat\velocity.cpp" />
+    <ClCompile Include="src\cheat\module\modules\movement\blink.cpp" />
+    <ClCompile Include="src\cheat\module\modules\movement\jumpreset.cpp" />
+    <ClCompile Include="src\cheat\module\modules\movement\nojumpdelay.cpp" />
+    <ClCompile Include="src\cheat\module\modules\movement\sprint.cpp" />
+    <ClCompile Include="src\cheat\module\modules\movement\stap.cpp" />
+    <ClCompile Include="src\cheat\module\modules\movement\wtap.cpp" />
+    <ClCompile Include="src\cheat\module\modules\render\arraylist.cpp" />
+    <ClCompile Include="src\cheat\module\modules\render\particles.cpp" />
+    <ClCompile Include="src\cheat\module\modules\render\render.cpp" />
+    <ClCompile Include="src\cheat\module\modules\render\zerohud.cpp" />
+    <ClCompile Include="src\cheat\module\modules\utils\autotool.cpp" />
+    <ClCompile Include="src\cheat\module\modules\utils\backtrack.cpp" />
+    <ClCompile Include="src\cheat\module\modules\utils\bridgeassist.cpp" />
+    <ClCompile Include="src\cheat\module\modules\utils\cheststealer.cpp" />
+    <ClCompile Include="src\cheat\module\modules\utils\data.cpp" />
+    <ClCompile Include="src\cheat\module\modules\utils\fastplace.cpp" />
+    <ClCompile Include="src\cheat\module\modules\utils\framespoofer.cpp" />
+    <ClCompile Include="src\cheat\module\modules\utils\lagrange.cpp" />
+    <ClCompile Include="src\cheat\module\modules\utils\noitemrelease.cpp" />
+    <ClCompile Include="src\cheat\module\modules\utils\refill.cpp" />
+    <ClCompile Include="src\cheat\module\modules\utils\rightclicker.cpp" />
+    <ClCompile Include="src\cheat\module\modules\utils\throwpot.cpp" />
+    <ClCompile Include="src\cheat\module\modules\world\antibot.cpp" />
+    <ClCompile Include="src\cheat\module\modules\world\friends.cpp" />
+    <ClCompile Include="src\cheat\module\modules\world\teams.cpp" />
+    <ClCompile Include="src\globals\utilities\maths\clicker\clicker.cpp" />
+    <ClCompile Include="src\sdk\game\input\input.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\activerenderinfo.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\axisalignedboundingbox.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\block.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\blockpos.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\channelhandlercontext.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\container.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\damagesource.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\entityrenderer.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\fontrenderer.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\framebuffer.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\frustrum.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\gamesettings.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\glstatemanager.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\guiscreen.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\iblockstate.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\iinventory.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\inventoryplayer.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\itemstack.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\java\list.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\keybinding.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\modelbiped.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\modelrenderer.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\mousehelper.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\movingobjectposition.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\nethandlerplayclient.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\networkmanager.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\openglhelper.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\packet.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\player.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\playercontrollermp.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\potion.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\queue.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\rendermanager.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\lock.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\scaledresolution.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\serverdata.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\mcsession.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\slot.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\team.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\timer.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\world.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\worldinfo.cpp" />
+    <ClCompile Include="src\sdk\internal\register\classregister.cpp" />
+    <ClCompile Include="src\sdk\internal\register\envregister.cpp" />
+    <ClCompile Include="src\sdk\internal\templates\classbase.cpp" />
+    <ClCompile Include="src\sdk\game\minecraft\minecraft.cpp" />
+    <ClCompile Include="src\sdk\game\classloader\classloader.cpp" />
+    <ClCompile Include="src\sdk\internal\gameclass\gameclass.cpp" />
+    <ClCompile Include="src\sdk\internal\templates\modulebase.cpp" />
+    <ClCompile Include="src\cheat\raid0.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ext\imgui\custom\custom.hpp" />
+    <ClInclude Include="ext\imgui\custom\fonts\font-icon.hpp" />
+    <ClInclude Include="ext\imgui\custom\fonts\font-medium.hpp" />
+    <ClInclude Include="ext\imgui\custom\fonts\font-regular.hpp" />
+    <ClInclude Include="ext\imgui\custom\fonts\font_regular.hpp" />
+    <ClInclude Include="ext\imgui\custom\fonts\font_semi.hpp" />
+    <ClInclude Include="ext\imgui\custom\fonts\icon_binary.hpp" />
+    <ClInclude Include="ext\imgui\custom\fonts\inter-regular.hpp" />
+    <ClInclude Include="ext\imgui\custom\fonts\notification-icon.hpp" />
+    <ClInclude Include="ext\imgui\custom\fonts\proggy-regular.hpp" />
+    <ClInclude Include="ext\imgui\imconfig.h" />
+    <ClInclude Include="ext\imgui\imgui.h" />
+    <ClInclude Include="ext\imgui\imgui_impl_opengl2.h" />
+    <ClInclude Include="ext\imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="ext\imgui\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="ext\imgui\imgui_impl_win32.h" />
+    <ClInclude Include="ext\imgui\imgui_internal.h" />
+    <ClInclude Include="ext\imgui\imstb_rectpack.h" />
+    <ClInclude Include="ext\imgui\imstb_textedit.h" />
+    <ClInclude Include="ext\imgui\imstb_truetype.h" />
+    <ClInclude Include="ext\minhook\buffer.h" />
+    <ClInclude Include="ext\minhook\hde\hde32.h" />
+    <ClInclude Include="ext\minhook\hde\hde64.h" />
+    <ClInclude Include="ext\minhook\hde\pstdint.h" />
+    <ClInclude Include="ext\minhook\hde\table32.h" />
+    <ClInclude Include="ext\minhook\hde\table64.h" />
+    <ClInclude Include="ext\minhook\MinHook.h" />
+    <ClInclude Include="ext\minhook\trampoline.h" />
+    <ClInclude Include="src\cheat\drawing\glowrenderer.hpp" />
+    <ClInclude Include="src\cheat\gui\notifications\data\samsung.hpp" />
+    <ClInclude Include="src\cheat\gui\notifications\notifications.hpp" />
+    <ClInclude Include="src\cheat\gui\spotify\spotify.hpp" />
+    <ClInclude Include="src\cheat\gui\spotify\stb_image.h" />
+    <ClInclude Include="src\cheat\gui\ui.hpp" />
+    <ClInclude Include="src\cheat\hook\detours\java\addtosendqueue.hpp" />
+    <ClInclude Include="src\cheat\hook\detours\java\attackentity.hpp" />
+    <ClInclude Include="src\cheat\hook\detours\java\attacktargetentitywithcurrentitem.hpp" />
+    <ClInclude Include="src\cheat\hook\detours\java\channelread0.hpp" />
+    <ClInclude Include="src\cheat\hook\detours\java\clickblock.hpp" />
+    <ClInclude Include="src\cheat\hook\detours\java\clickmouse.hpp" />
+    <ClInclude Include="src\cheat\hook\detours\java\getmouseover.hpp" />
+    <ClInclude Include="src\cheat\hook\detours\java\handleentityvelocity.hpp" />
+    <ClInclude Include="src\cheat\hook\detours\java\handlestatusupdate.hpp" />
+    <ClInclude Include="src\cheat\hook\detours\java\loadworld.hpp" />
+    <ClInclude Include="src\cheat\hook\detours\java\renderworldpass.hpp" />
+    <ClInclude Include="src\cheat\hook\detours\java\runtick.hpp" />
+    <ClInclude Include="src\cheat\hook\detours\java\swingitem.hpp" />
+    <ClInclude Include="src\cheat\hook\detours\java\updatecameraandrender.hpp" />
+    <ClInclude Include="src\cheat\hook\detours\onswapbuffers.hpp" />
+    <ClInclude Include="src\cheat\hook\detours\onwindowsdisplayupdate.hpp" />
+    <ClInclude Include="src\cheat\hook\detours\strictmathatan2.hpp" />
+    <ClInclude Include="src\cheat\hook\detours\wglswapbuffers.hpp" />
+    <ClInclude Include="src\cheat\hook\hook.hpp" />
+    <ClInclude Include="src\cheat\hook\javahook.hpp" />
+    <ClInclude Include="src\cheat\module\client\altmanager.hpp" />
+    <ClInclude Include="src\cheat\module\module.hpp" />
+    <ClInclude Include="src\cheat\module\modules\combat\aimassist.hpp" />
+    <ClInclude Include="src\cheat\module\modules\combat\autoclicker.hpp" />
+    <ClInclude Include="src\cheat\module\modules\combat\blockhit.hpp" />
+    <ClInclude Include="src\cheat\module\modules\combat\example.hpp" />
+    <ClInclude Include="src\cheat\module\modules\combat\hitselect.hpp" />
+    <ClInclude Include="src\cheat\module\modules\combat\reach.hpp" />
+    <ClInclude Include="src\cheat\module\modules\combat\velocity.hpp" />
+    <ClInclude Include="src\cheat\module\modules\movement\blink.hpp" />
+    <ClInclude Include="src\cheat\module\modules\movement\jumpreset.hpp" />
+    <ClInclude Include="src\cheat\module\modules\movement\nojumpdelay.hpp" />
+    <ClInclude Include="src\cheat\module\modules\movement\sprint.hpp" />
+    <ClInclude Include="src\cheat\module\modules\movement\stap.hpp" />
+    <ClInclude Include="src\cheat\module\modules\movement\wtap.hpp" />
+    <ClInclude Include="src\cheat\module\modules\render\arraylist.hpp" />
+    <ClInclude Include="src\cheat\module\modules\render\particles.hpp" />
+    <ClInclude Include="src\cheat\module\modules\render\render.hpp" />
+    <ClInclude Include="src\cheat\module\modules\render\zerohud.hpp" />
+    <ClInclude Include="src\cheat\module\modules\utils\autotool.hpp" />
+    <ClInclude Include="src\cheat\module\modules\utils\backtrack.hpp" />
+    <ClInclude Include="src\cheat\module\modules\utils\bridgeassist.hpp" />
+    <ClInclude Include="src\cheat\module\modules\utils\cheststealer.hpp" />
+    <ClInclude Include="src\cheat\module\modules\utils\data.hpp" />
+    <ClInclude Include="src\cheat\module\modules\utils\fastplace.hpp" />
+    <ClInclude Include="src\cheat\module\modules\utils\framespoofer.hpp" />
+    <ClInclude Include="src\cheat\module\modules\utils\lagrange.hpp" />
+    <ClInclude Include="src\cheat\module\modules\utils\noitemrelease.hpp" />
+    <ClInclude Include="src\cheat\module\modules\utils\refill.hpp" />
+    <ClInclude Include="src\cheat\module\modules\utils\rightclicker.hpp" />
+    <ClInclude Include="src\cheat\module\modules\utils\throwpot.hpp" />
+    <ClInclude Include="src\cheat\module\modules\world\antibot.hpp" />
+    <ClInclude Include="src\cheat\module\modules\world\friends.hpp" />
+    <ClInclude Include="src\cheat\module\modules\world\teams.hpp" />
+    <ClInclude Include="src\globals\globals.hpp" />
+    <ClInclude Include="src\globals\structures\axisalignedbb_t.hpp" />
+    <ClInclude Include="src\globals\structures\vector2.hpp" />
+    <ClInclude Include="src\globals\structures\vector3.hpp" />
+    <ClInclude Include="src\globals\structures\vector4.hpp" />
+    <ClInclude Include="src\globals\utilities\maths\clicker\clicker.hpp" />
+    <ClInclude Include="src\globals\utilities\maths\random\rng.hpp" />
+    <ClInclude Include="src\globals\utilities\maths\raytrace.hpp" />
+    <ClInclude Include="src\globals\utilities\utils_a.hpp" />
+    <ClInclude Include="src\globals\utilities\utils_b.hpp" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="src\globals\utilities\utils_c.hpp" />
+    <ClInclude Include="src\sdk\game\input\input.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\activerenderinfo.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\axisalignedboundingbox.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\block.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\blockpos.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\channelhandlercontext.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\container.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\damagesource.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\entityrenderer.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\fontrenderer.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\framebuffer.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\frustrum.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\gamesettings.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\glstatemanager.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\guiscreen.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\iblockstate.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\iinventory.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\inventoryplayer.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\itemstack.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\java\list.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\keybinding.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\modelbiped.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\modelrenderer.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\mousehelper.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\movingobjectposition.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\nethandlerplayclient.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\networkmanager.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\openglhelper.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\packet.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\player.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\playercontrollermp.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\potion.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\queue.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\rendermanager.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\lock.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\scaledresolution.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\serverdata.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\mcsession.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\slot.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\team.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\timer.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\world.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\worldinfo.hpp" />
+    <ClInclude Include="src\sdk\internal\register\classregister.hpp" />
+    <ClInclude Include="src\sdk\internal\register\envregister.hpp" />
+    <ClInclude Include="src\sdk\internal\templates\classbase.hpp" />
+    <ClInclude Include="src\sdk\game\minecraft\minecraft.hpp" />
+    <ClInclude Include="src\sdk\internal\templates\modulebase.hpp" />
+    <ClInclude Include="src\sdk\game\classloader\classloader.hpp" />
+    <ClInclude Include="src\sdk\internal\classfactory.hpp" />
+    <ClInclude Include="src\sdk\internal\gameclass\gameclass.hpp" />
+    <ClInclude Include="src\cheat\raid0.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
