@@ -195,7 +195,7 @@ bool SpotifyHandler::Authenticate()
 	Header.emplace("Authorization", "Basic " + base64_encode(ClientID + ":" + ClientSecret));
 
 	const cpr::Response Response = cpr::Post(cpr::Url{ "https://accounts.spotify.com/api/token" }, Parameters, Header);
-	std::cout << Response.text << std::endl;
+
 	if (Response.status_code != 200) 
 	{
 		Toggled = false;

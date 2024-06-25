@@ -89,5 +89,5 @@ public:
     virtual void Run(JNIEnv* Env) override;
    // virtual void OnRenderWorldPass(JNIEnv* Env, int Pass, float PartialTicks, long FinishTimeNano) override;
     //virtual void OnUpdate(JNIEnv* Env);
-    virtual void OnSetAngles(JNIEnv* Env, float Yaw, float Pitch, bool* ShouldCancel) override;
+   // virtual void OnSetAngles(JNIEnv* Env, float Yaw, float Pitch, bool* ShouldCancel) override;
 };

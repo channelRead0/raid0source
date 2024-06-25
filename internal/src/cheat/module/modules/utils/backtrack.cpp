@@ -42,8 +42,6 @@ void BackTrack::Run(JNIEnv* Env)
 	catch (...)
 	{
 
-
-		std::cout << "Run Issu" << std::endl;
 	}
 }
 
@@ -206,7 +204,6 @@ void BackTrack::OnPacketReceive(JNIEnv* Env, const std::shared_ptr<PacketReceive
 	catch (...)
 	{
 		PacketQueueHandlerPtr->ProcessAndClearQueue(Env);
-		std::cout << "OnPacketReceive Issu" << std::endl;
 	}
 }
 
@@ -257,7 +254,6 @@ void BackTrack::OnHandleStatusUpdate(JNIEnv* Env, const std::shared_ptr<Player>&
 	catch (...)
 	{
 
-		std::cout << "OnHandleStatusUpdate Issu" << std::endl;
 	}
 }
 
@@ -272,7 +268,6 @@ void BackTrack::OnRespawn(JNIEnv* Env)
 	catch (...)
 	{
 		PacketQueueHandlerPtr->ProcessAndClearQueue(Env);
-		std::cout << "Respawn Issu" << std::endl;
 	}
 }
 
@@ -417,7 +412,7 @@ void BackTrack::OnRender(JNIEnv* Env)
 	}
 	catch (...)
 	{
-		std::cout << "Render Issu" << std::endl;
+
 	}
 }
 

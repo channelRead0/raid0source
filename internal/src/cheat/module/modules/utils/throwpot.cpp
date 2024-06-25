@@ -57,7 +57,7 @@ void ThrowPot::Run(JNIEnv* Env)
 		if (PotionItem->ContainsEffectFromID(Env, SlotItemStack->GetInstanceObject(), 6) || PotionItem->ContainsEffectFromID(Env, SlotItemStack->GetInstanceObject(), 12)) {
 			Slots.emplace_back(SlotIndex);
 		}*/
-		if (PotionItem->ContainsEffectFromID(Env, SlotItemStack->GetInstanceObject(), 12) || PotionItem->ContainsEffectFromID(Env, SlotItemStack->GetInstanceObject(), 6) || PotionItem->ContainsEffectFromID(Env, SlotItemStack->GetInstanceObject(), 18)) {
+		if (/*PotionItem->ContainsEffectFromID(Env, SlotItemStack->GetInstanceObject(), 12) || */PotionItem->ContainsEffectFromID(Env, SlotItemStack->GetInstanceObject(), 6)/* || PotionItem->ContainsEffectFromID(Env, SlotItemStack->GetInstanceObject(), 18)*/) {
 			Slots.emplace_back(SlotIndex);
 		}
 	}
@@ -87,7 +87,6 @@ void ThrowPot::Run(JNIEnv* Env)
 
 		int PotCount = static_cast<int>(std::ceil(HealthDifference / 8));
 
-		std::cout << "Stage D" << std::endl;
 		if (PotCount == 0) {
 			return;
 		}
@@ -124,7 +123,6 @@ void ThrowPot::Run(JNIEnv* Env)
 		}
 	}
 
-	std::cout << "Stage DYN" << std::endl;
 	if (ThrowMode == DYNAMIC)
 	{
 		int PotCount = static_cast<int>(std::ceil(HealthDifference / 8));

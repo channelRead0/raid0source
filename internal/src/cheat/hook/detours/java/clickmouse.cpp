@@ -6,7 +6,6 @@
 
 void ClickMouse::ClickMouseDetour(Frame* Frame, Thread* Thread, bool* ShouldCancel)
 {
-	std::cout << "CLICK" << std::endl;
 	if (INSTANCE_DESTRUCT) 
 	{
 		//EnvRegister::DestroyThreadEnv();

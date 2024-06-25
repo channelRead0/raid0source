@@ -1,5 +1,6 @@
 #include "pch.h"
 #include <fstream>
+#include <shellapi.h>
 
 #include "cheat/hook/hook.hpp"
 #include "cheat/hook/javahook.hpp"

@@ -111,10 +111,8 @@ void Refill::Run(JNIEnv* Env)
 		
 		const auto PotionItem = std::make_shared<ItemPotion>(Env, ItemInSlot->GetInstanceObject());
 		const auto PrimaryEffect = PotionItem->GetPrimaryPotionEffect(Env, StackInSlot->GetInstanceObject());
-
-		std::cout << PrimaryEffect << std::endl;
 		
-		if (PotionItem->ContainsEffectFromID(Env, StackInSlot->GetInstanceObject(), 12) || PotionItem->ContainsEffectFromID(Env, StackInSlot->GetInstanceObject(), 6) || PotionItem->ContainsEffectFromID(Env, StackInSlot->GetInstanceObject(), 18)) {
+		if (/*PotionItem->ContainsEffectFromID(Env, StackInSlot->GetInstanceObject(), 12) || */PotionItem->ContainsEffectFromID(Env, StackInSlot->GetInstanceObject(), 6) /*|| PotionItem->ContainsEffectFromID(Env, StackInSlot->GetInstanceObject(), 18)*/) {
 			Slots.emplace_back(SlotIndex);
 		}
 	}

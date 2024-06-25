@@ -363,7 +363,6 @@ struct ConstMethod
         return *(ConstantPool**)((uint8_t*)this + ConstantsEntry->Offset);
     }
 
-
     void SetConstants(ConstantPool* Constants)
     {
         if (!this) return;
@@ -960,7 +959,6 @@ public:
         AllocatedAssembly = MemoryModule::AllocateNearbyMemory(Target, HOOK_SIZE + sizeof(Assembly), PAGE_EXECUTE_READWRITE);
         if (!AllocatedAssembly)
         {
-            std::cerr << "Failed to allocate memory for i2i hook\n";
             return;
         }
 
@@ -1195,7 +1193,6 @@ public:
         uint8_t* Target = (uint8_t*)FindCorrectHookPlace(i2i);
         if (!Target)
         {
-            std::cerr << "Failed to find correct i2i hook location\n";
             return false;
         }
 

@@ -92,7 +92,7 @@ void ModuleManager::RegisterThreads()
 	ThreadedModuleList["JumpReset"] = new JumpReset();
 	ThreadedModuleList["BlockHit"] = new BlockHit();
 	ThreadedModuleList["ZeroHud"] = new ZeroHud();
-	ThreadedModuleList["NoItemRelease"] = new NoItemRelease();
+	//ThreadedModuleList["NoItemRelease"] = new NoItemRelease();
 	ThreadedModuleList["Particles"] = new Particles();
 	//ThreadedModuleList["HitSelect"] = new HitSelect();
 

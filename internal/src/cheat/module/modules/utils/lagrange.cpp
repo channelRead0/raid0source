@@ -152,32 +152,27 @@ void LagRange::OnPacketReceive(JNIEnv* Env, const std::shared_ptr<PacketReceiveD
 		if (EntityPacket->GetEntityID(Env) == LocalPlayer->GetEntityID(Env)) 
 		{
 			TicksSinceRespawn = 0;
-			std::cout << "S08PacketPlayerPosLook" << std::endl;
 		}
 	}
 
 	const auto ClassName = GetJavaClassName(Env, Env->GetObjectClass(Packet->GetInstanceObject()));
 	if (ClassName.contains("S01PacketJoinGame"))
 	{
-		std::cout << "S01PacketJoinGame" << std::endl;
 		TicksSinceRespawn = 0;
 	}
 
 	if (ClassName.contains("S05PacketSpawnPosition"))
 	{
-		std::cout << "S05PacketSpawnPosition" << std::endl;
 		TicksSinceRespawn = 0;
 	}
 
 	if (ClassName.contains("S07PacketRespawn"))
 	{
-		std::cout << "S07PacketRespawn" << std::endl;
 		TicksSinceRespawn = 0;
 	}
 
 	if (ClassName.contains("S08PacketPlayerPosLook"))
 	{
-		std::cout << "S08PacketPlayerPosLook" << std::endl;
 		TicksSinceRespawn = 0;
 	}
 
@@ -194,7 +189,6 @@ void LagRange::OnPacketReceive(JNIEnv* Env, const std::shared_ptr<PacketReceiveD
 		{
 			//PacketReceiveQueueHandlerPtr->ClearQueue(Env);
 			TicksSinceRespawn = 0;
-			std::cout << "TlptPkt" << std::endl;
 		}
 	}
 }

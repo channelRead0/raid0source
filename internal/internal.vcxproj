@@ -76,8 +76,8 @@
     <LibraryPath>C:\Program Files\Java\jdk-17\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)internal;$(SolutionDir)internal\src;$(SolutionDir)\internal\ext;C:\Program Files\Java\jdk-22\include;C:\Program Files\Java\jdk-22\include\win32;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files\Java\jdk-22\lib;C:\Program Files\VMProtect Professional\Lib\Windows;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)internal;$(SolutionDir)internal\src;$(SolutionDir)\internal\ext;C:\Program Files\Java\jdk-22\include;C:\Program Files\Java\jdk-22\include\win32;C:\Program Files\VMProtect Ultimate\Include\C;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\Java\jdk-22\lib;C:\Program Files\VMProtect Ultimate\Lib\Windows;$(LibraryPath)</LibraryPath>
     <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)</TargetName>
     <OutDir>..\out\$(Configuration)\</OutDir>

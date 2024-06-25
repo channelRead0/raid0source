@@ -72,7 +72,8 @@ void STap::OnTick(JNIEnv* Env)
 	{
 		if (WasSet)
 		{
-			std::cout << "rmb unset" << std::endl;
+			
+			<< "rmb unset" << std::endl;
 			InputPtr->ReleaseMouse(true);
 			WasSet = false;
 		}

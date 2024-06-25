@@ -49,7 +49,8 @@ void AttackTargetEntityWithCurrentItem::AttackTargetEntityWithCurrentItemDetour(
 	/*static int RunOnce = [&Env, &Frame]()->int
 		{
 #ifdef SHOW_CONSOLE
-			std::cout << "Detour -> AttackTargetEntityWithCurrentItem" << std::endl;
+			
+			<< "Detour -> AttackTargetEntityWithCurrentItem" << std::endl;
 			std::cout << "Env -> 0x" << Env << std::endl;
 			std::cout << "This -> 0x" << HookManager->GetObjectParam(Frame, 0) << std::endl;
 #endif
